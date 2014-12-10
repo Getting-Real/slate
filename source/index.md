@@ -2,9 +2,8 @@
 title: API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
+  - json
+  - objc
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -18,262 +17,232 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Saleswhale API! You can use our API to access Saleswhale API endpoints, which can get information on various sea creatures, kittens, and flurry creatures in our database.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in Shell, Ruby, and Objective-C! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Let's get started!
 
-# Authentication
 
-> To authorize, use this code:
+# Newsfeed
 
-```ruby
-require 'kittn'
+## Get the Newsfeed
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace `meowmeowmeow` with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
+> The GET request returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+    "newsfeed": [
+        {
+            "post_id": 1,
+            "post_snippet": "This is a note that contains a whale.",
+            "post_owner": {
+                "id": 1,
+                "email": "gabriel@gettingrail.com",
+                "created_at": "2014-12-09T06:30:34.477Z",
+                "updated_at": "2014-12-10T08:17:36.888Z",
+                "full_name": "Gabriel Lim",
+                "designation": "Whale",
+                "organisation_id": 1
+            },
+            "post_type": "note",
+            "post_thumbnail": "http://i239.photobucket.com/albums/ff20/Master-Sayien/vader.jpg",
+            "note_detail": {
+                "note_id": 1,
+                "note_body": "This is a note that contains a whale.",
+                "group_id": 1,
+                "file_assets": [
+                    {
+                        "file_url": "https://saleswhale-reboot-production.s3-us-west-2.amazonaws.com/uploads/file_asset/asset/4/GadPoint-Logo_120x120.png?AWSAccessKeyId=AKIAJMUB6BJTAHZBBSEQ&Signature=ep7k1EPavud76T1a7gz3GUQhsio%3D&Expires=1418224130",
+                        "file_type": "image/png",
+                        "file_size": 13308
+                    },
+                    {
+                        "file_url": "https://saleswhale-reboot-production.s3-us-west-2.amazonaws.com/uploads/file_asset/asset/5/StartuplandHowThreeGuysRisked.acsm?AWSAccessKeyId=AKIAJMUB6BJTAHZBBSEQ&Signature=hR4Evw1JIg%2BeaFpAuDyRSyfC6P8%3D&Expires=1418224130",
+                        "file_type": "application/octet-stream",
+                        "file_size": 1473
+                    },
+                    {
+                        "file_url": "https://saleswhale-reboot-production.s3-us-west-2.amazonaws.com/uploads/file_asset/asset/6/larry_ellison.jpg?AWSAccessKeyId=AKIAJMUB6BJTAHZBBSEQ&Signature=M4lcPwAZFbpkumXxdo9M7LRqaco%3D&Expires=1418224130",
+                        "file_type": "image/jpeg",
+                        "file_size": 10908
+                    }
+                ],
+                "note_created_at": "2014-12-10T08:30:46.581Z",
+                "note_updated_at": "2014-12-10T08:30:46.581Z"
+            },
+            "timestamp": "2014-12-10T08:30:46.581Z"
+        },
+        {
+            "post_id": 2,
+            "post_snippet": "This is a note that contains a whale.",
+            "post_owner": {
+                "id": 1,
+                "email": "gabriel@gettingrail.com",
+                "created_at": "2014-12-09T06:30:34.477Z",
+                "updated_at": "2014-12-10T08:17:36.888Z",
+                "full_name": "Gabriel Lim",
+                "designation": "Whale",
+                "organisation_id": 1
+            },
+            "post_type": "note",
+            "post_thumbnail": "http://i239.photobucket.com/albums/ff20/Master-Sayien/vader.jpg",
+            "note_detail": {
+                "note_id": 2,
+                "note_body": "This is a note that contains a whale.",
+                "group_id": 1,
+                "file_assets": [
+                ],
+                "note_created_at": "2014-12-10T14:38:03.081Z",
+                "note_updated_at": "2014-12-10T14:38:03.081Z"
+            },
+            "timestamp": "2014-12-10T14:38:03.081Z"
+        }
+    ]
+}
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves the Newsfeed for a particular user.
 
 ### HTTP Request
 
-`GET http://example.com/kittens`
+`GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/v1/newsfeed`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+Parameter | Description
+--------- | -----------
+auth_token | The authentication token to identify the user
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+### Response
 
-```ruby
-require 'kittn'
+Attribute | Description
+--------- | -----------
+post_id | The ID of the newsfeed post
+post_snippet| The snippet of the post to be shown in the newsfeed
+post_owner | The user who created the post
+post_type | A newsfeed post can be a `note`, `event`, `task`, `goal` and etc..
+post_thumbnail | A image thumbnail to use as the background of the post, if any
+{:type}_detail | The post detail, e.g. note_detail, when the user taps on the post to see more detail modally
+timestamp | The timestamp used to display how long ago the post was created in the newsfeed
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
 
-```python
-import kittn
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+# Notes
 
-```shell
-curl "http://example.com/api/kittens/3"
-  -H "Authorization: meowmeowmeow"
+## Create a Note  
+
+```json
+{
+  "auth_token" : "Bnykjzgsmza3cGMt9qBV",
+  "note" : {
+    "body" : "This is a note that contains a whale."
+  }
+}
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+    "status": 1,
+    "note": {
+        "id": 2,
+        "body": "This is a note that contains a whale.",
+        "group_id": 1,
+        "workspace_id": 1,
+        "organisation_id": 1,
+        "primary_owner_id": 1,
+        "created_at": "2014-12-10T14:38:03.081Z",
+        "updated_at": "2014-12-10T14:38:03.081Z"
+    }
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint creates a Note.
 
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+A Note is a body of text that can be posted by a user, and it must belong to a Group.
 
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the cat to retrieve
-
-
-# KittenZ
-
-## Get All KittenZ
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
+A Note can have multiple file attachments.
 
 ### HTTP Request
 
-`GET http://example.com/kittens`
+`POST http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/v1/groups/{:id}/notes`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+Parameter | Description
+--------- | -----------
+{:id} | The ID of the Group to post the Note in
+auth_token | The authentication token to identify the user
+note | The following parameters are required - `body`
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+## Attach a File Asset
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/3"
-  -H "Authorization: meowmeowmeow"
+```json
+{
+  "auth_token" : "Bnykjzgsmza3cGMt9qBV",
+  "asset" : form-data
+}
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+    "status": 1,
+    "file_asset": {
+        "file_url": "https://saleswhale-reboot-production.s3-us-west-2.amazonaws.com/uploads/file_asset/asset/6/larry_ellison.jpg?AWSAccessKeyId=AKIAJMUB6BJTAHZBBSEQ&Signature=ZpHVkqbKgqy2hybVW4EaOpuLC1s%3D&Expires=1418223687",
+        "user": {
+            "id": 1,
+            "email": "gabriel@gettingrail.com",
+            "created_at": "2014-12-09T06:30:34.477Z",
+            "updated_at": "2014-12-10T08:17:36.888Z",
+            "full_name": "Gabriel Lim",
+            "designation": "Whale",
+            "organisation_id": 1
+        },
+        "note": {
+            "id": 1,
+            "body": "This is a note that contains a whale.",
+            "group_id": 1,
+            "workspace_id": 1,
+            "organisation_id": 1,
+            "primary_owner_id": 1,
+            "created_at": "2014-12-10T08:30:46.581Z",
+            "updated_at": "2014-12-10T08:30:46.581Z"
+        },
+        "file_type": "image/jpeg",
+        "file_size": 10908
+    }
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint attaches a file asset to a Note. The file asset can be of any content type - the server will parse and have it's own handling logic for certain content type. 
 
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+Currently, each individual asset cannot exceed 20MB in size. This may be revised in the future when we have more resources.
+
+<aside class="warning">The Content-Type of the HTTP request in should be multipart/form-data.</aside>
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`POST http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/v1/notes/{:id}/file_assets`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the cat to retrieve
+{:id} | The ID of the Note object to attach the file asset to
+auth_token | The authentication token to identify the user
+asset | The attached file in `multipart/form-data` format
 
 
 
