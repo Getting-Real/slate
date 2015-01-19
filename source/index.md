@@ -32,73 +32,115 @@ Let's get started!
 
 ```json
 {
-    "newsfeed": [
-        {
-            "post_id": 1,
-            "post_snippet": "This is a note that contains a whale.",
-            "post_owner": {
-                "id": 1,
-                "email": "gabriel@gettingrail.com",
-                "created_at": "2014-12-09T06:30:34.477Z",
-                "updated_at": "2014-12-10T08:17:36.888Z",
-                "full_name": "Gabriel Lim",
-                "designation": "Whale",
-                "organisation_id": 1
+"newsfeed_items": [
+    {
+        "newsfeed_id": 2951,
+        "interaction_id": 1242,
+        "comment_count": 0,
+        "published_datetime": "2015-01-18T09:18:49.936Z",
+        "verb": "logged_meeting",
+        "actor": {
+            "actorType": "user",
+            "id": 1,
+            "displayName": "Gabriel Lim",
+            "image": {
+                "thumbnail": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/thumb_lopsgabriel.jpeg"
+                },
+                "original": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/lopsgabriel.jpeg"
+                }
             },
-            "post_type": "note",
-            "post_thumbnail": "http://i239.photobucket.com/albums/ff20/Master-Sayien/vader.jpg",
-            "note_detail": {
-                "note_id": 1,
-                "note_body": "This is a note that contains a whale.",
-                "group_id": 1,
-                "file_assets": [
-                    {
-                        "file_url": "https://saleswhale-reboot-production.s3-us-west-2.amazonaws.com/uploads/file_asset/asset/4/GadPoint-Logo_120x120.png?AWSAccessKeyId=AKIAJMUB6BJTAHZBBSEQ&Signature=ep7k1EPavud76T1a7gz3GUQhsio%3D&Expires=1418224130",
-                        "file_type": "image/png",
-                        "file_size": 13308
-                    },
-                    {
-                        "file_url": "https://saleswhale-reboot-production.s3-us-west-2.amazonaws.com/uploads/file_asset/asset/5/StartuplandHowThreeGuysRisked.acsm?AWSAccessKeyId=AKIAJMUB6BJTAHZBBSEQ&Signature=hR4Evw1JIg%2BeaFpAuDyRSyfC6P8%3D&Expires=1418224130",
-                        "file_type": "application/octet-stream",
-                        "file_size": 1473
-                    },
-                    {
-                        "file_url": "https://saleswhale-reboot-production.s3-us-west-2.amazonaws.com/uploads/file_asset/asset/6/larry_ellison.jpg?AWSAccessKeyId=AKIAJMUB6BJTAHZBBSEQ&Signature=M4lcPwAZFbpkumXxdo9M7LRqaco%3D&Expires=1418224130",
-                        "file_type": "image/jpeg",
-                        "file_size": 10908
-                    }
-                ],
-                "note_created_at": "2014-12-10T08:30:46.581Z",
-                "note_updated_at": "2014-12-10T08:30:46.581Z"
-            },
-            "timestamp": "2014-12-10T08:30:46.581Z"
+            "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/collaborators/1"
         },
-        {
-            "post_id": 2,
-            "post_snippet": "This is a note that contains a whale.",
-            "post_owner": {
-                "id": 1,
-                "email": "gabriel@gettingrail.com",
-                "created_at": "2014-12-09T06:30:34.477Z",
-                "updated_at": "2014-12-10T08:17:36.888Z",
-                "full_name": "Gabriel Lim",
-                "designation": "Whale",
-                "organisation_id": 1
+        "object": {
+            "objectType": "Event",
+            "id": 1,
+            "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/events/1",
+            "displayName": "Talked about project"
+        },
+        "targets": [
+            {
+                "targetType": "contact",
+                "id": 180,
+                "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/180",
+                "displayName": "Chen Sung, Lai"
             },
-            "post_type": "note",
-            "post_thumbnail": "http://i239.photobucket.com/albums/ff20/Master-Sayien/vader.jpg",
-            "note_detail": {
-                "note_id": 2,
-                "note_body": "This is a note that contains a whale.",
-                "group_id": 1,
-                "file_assets": [
-                ],
-                "note_created_at": "2014-12-10T14:38:03.081Z",
-                "note_updated_at": "2014-12-10T14:38:03.081Z"
+            {
+                "targetType": "contact",
+                "id": 491,
+                "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/491",
+                "displayName": "Ain Ebrahim"
             },
-            "timestamp": "2014-12-10T14:38:03.081Z"
+            {
+                "targetType": "contact",
+                "id": 46,
+                "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/46",
+                "displayName": "Aizat Omar"
+            },
+            {
+                "targetType": "contact",
+                "id": 468,
+                "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/468",
+                "displayName": "Ahmad"
+            },
+            {
+                "targetType": "contact",
+                "id": 493,
+                "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/493",
+                "displayName": "Ang Ying Xin"
+            }
+        ],
+        "privacy": {
+            "default": 0,
+            "allowed_users": [ ]
         }
-    ]
+    },
+    {
+        "newsfeed_id": 2949,
+        "interaction_id": 1241,
+        "comment_count": 1,
+        "published_datetime": "2015-01-18T06:21:53.000Z",
+        "verb": "emailed",
+        "actor": {
+            "actorType": "user",
+            "id": 1,
+            "displayName": "Gabriel Lim",
+            "image": {
+                "thumbnail": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/thumb_lopsgabriel.jpeg"
+                },
+                "original": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/lopsgabriel.jpeg"
+                }
+            },
+            "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/collaborators/1"
+        },
+        "object": {
+            "objectType": "EmailMessageMetadatum",
+            "id": 1381,
+            "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/email_message_metadata/1381",
+            "displayName": "Hi Marilyn, Could we reschedule the meeting on Thursday to 3.30 pm? Sorry about it as we have"
+        },
+        "targets": [
+            {
+                "targetType": "contact",
+                "id": 159,
+                "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/159",
+                "displayName": "Marilyn Tan Mei Xuan"
+            },
+            {
+                "targetType": "user",
+                "id": 2,
+                "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/collaborators/2",
+                "displayName": "Venus Wong"
+            }
+        ],
+        "privacy": {
+            "default": 0,
+            "allowed_users": [ ]
+        }
+    }]
 }
 ```
 
@@ -106,13 +148,14 @@ This endpoint retrieves the Newsfeed for a particular user.
 
 ### HTTP Request
 
-`GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/v1/newsfeed`
+`GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/newsfeed`
 
 ### Query Parameters
 
 Parameter | Description
 --------- | -----------
 auth_token | The authentication token to identify the user
+page       | The page number to retrieve (default - returns 10 newsfeed items)
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
@@ -122,17 +165,18 @@ Remember — a happy kitten is an authenticated kitten!
 
 Attribute | Description
 --------- | -----------
-post_id | The ID of the newsfeed post
-post_snippet| The snippet of the post to be shown in the newsfeed
-post_owner | The user who created the post
-post_type | A newsfeed post can be a `note`, `event`, `task`, `goal` and etc..
-post_thumbnail | A image thumbnail to use as the background of the post, if any
-{:type}_detail | The post detail, e.g. note_detail, when the user taps on the post to see more detail modally
-timestamp | The timestamp used to display how long ago the post was created in the newsfeed
+newsfeed_id | The ID of the newsfeed item. Not important, as it's just for reference. (Newsfeed objects are just in-memory hashes for performance.)
+interaction_id | The ID of the base interaction item. **Important.** You will be using this to reference comments, stars, privacy and the full body of the interaction.
+comment_count | The number of comments on this particular interaction
+published_datatime | When the interaction occurred. Use this to show the 'how long ago'. This published_datetime automatically calculates when a task is completed, event/note was logged, and the timestamp of when emails were received.
+actor | The person who generated this interaction. This person can be either a contact or a user. Currently contact-generated interactions are only limited to incoming emails.
+object | The nature of the interaction, which includes the type, and the body/snippet that you can display, which is referenced in the displayName of the object.
+targets | An array of the target of the interactions. For example, people who attended the meeting, people who are receipents of the emails, notes about a contact etc..
+privacy | A hash, which has two properties - default and allowed_users. Default is the default privacy setting of the interaction. 0 is everyone can see. 1 is only can see the activity snippet, and 2 is private only to you. In the future, allowed_users will be computed first, then all other users who are not in allowed_users will take the default privacy settings.
 
 
 
-# Notes
+# Notes (Deprecated - Disregard)
 
 ## Create a Note  
 
