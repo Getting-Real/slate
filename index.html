@@ -231,7 +231,7 @@ Remember — a happy kitten is an authenticated kitten!
 <td>A hash, which has two properties - default and allowed_users. Default is the default privacy setting of the interaction. 0 is everyone can see. 1 is only can see the activity snippet, and 2 is private only to you. In the future, allowed_users will be computed first, then all other users who are not in allowed_users will take the default privacy settings.</td>
 </tr>
 </tbody></table>
-<h1 id='notes-deprecated---disregard'>Notes (Deprecated - Disregard)</h1><h2 id='create-a-note'>Create a Note</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+<h1 id='notes'>Notes</h1><h2 id='create-a-note'>Create a Note</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">"auth_token"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bnykjzgsmza3cGMt9qBV"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"note"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"body"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note that contains a whale."</span><span class="w">
@@ -247,10 +247,7 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note that contains a whale."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"workspace_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"organisation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"primary_owner_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">773</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T14:38:03.081Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T14:38:03.081Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -259,11 +256,11 @@ Remember — a happy kitten is an authenticated kitten!
 
 <p>This endpoint creates a Note.</p>
 
-<p>A Note is a body of text that can be posted by a user, and it must belong to a Group.</p>
+<p>A Note is a body of text that can be posted by a user, and it must have a Contact reference. This Contact reference refers to the Contact that the Note is about.</p>
 
 <p>A Note can have multiple file attachments.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">POST http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/v1/groups/{:id}/notes</code></p>
+<p><code class="prettyprint">POST http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/notes</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -272,16 +269,12 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>{:id}</td>
-<td>The ID of the Group to post the Note in</td>
-</tr>
-<tr>
 <td>auth_token</td>
 <td>The authentication token to identify the user</td>
 </tr>
 <tr>
 <td>note</td>
-<td>The following parameters are required - <code class="prettyprint">body</code></td>
+<td>The following parameters are required - <code class="prettyprint">body</code> and <code class="prettyprint">contact_id</code></td>
 </tr>
 </tbody></table>
 
@@ -313,9 +306,7 @@ Remember — a happy kitten is an authenticated kitten!
         </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note that contains a whale."</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"workspace_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"organisation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">773</span><span class="p">,</span><span class="w">
             </span><span class="s2">"primary_owner_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T08:30:46.581Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T08:30:46.581Z"</span><span class="w">
