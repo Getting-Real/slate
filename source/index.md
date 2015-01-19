@@ -284,3 +284,64 @@ asset | The attached file in `multipart/form-data` format
 
 
 
+
+
+
+
+# Contacts
+
+## Search for Contacts
+
+> The GET request returns JSON structured like this:
+
+```json
+{
+  "status" : 1,
+  "people" : [
+     {
+        "organisation_id": 4,
+        "id": 779,
+        "full_name": "Irene Coghlan",
+        "primary_email": "irene@theappbusiness.com",
+        "account_id": null,
+        "created_at": "2015-01-05T06:15:55.036Z",
+        "updated_at": "2015-01-05T06:15:55.036Z",
+        "birthday": null,
+        "first_added_by_user_id": 11
+    },
+    {
+        "organisation_id": 4,
+        "id": 780,
+        "full_name": "Alvin Lee [Onezine.com]",
+        "primary_email": "a@onezine.com",
+        "account_id": null,
+        "created_at": "2015-01-05T06:15:55.079Z",
+        "updated_at": "2015-01-05T06:15:55.079Z",
+        "birthday": null,
+        "first_added_by_user_id": 11
+    }
+  ]
+}
+```
+
+This endpoint searches for Contacts with full text search.
+
+
+### HTTP Request
+
+`GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/contacts/search`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+auth_token | The authentication token to identify the user
+q       | The query string, minimum need at least 2 characters before it will trigger the full-text search
+scope   | The scope is either 'all', 'contacts' or 'users'. Default is 'all' if scope parameter not provided
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+
+
