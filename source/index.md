@@ -299,26 +299,25 @@ asset | The attached file in `multipart/form-data` format
   "status" : 1,
   "people" : [
      {
+        "object_type": "contact",
         "organisation_id": 4,
         "id": 779,
         "full_name": "Irene Coghlan",
-        "primary_email": "irene@theappbusiness.com",
+        "email": "irene@theappbusiness.com",
         "account_id": null,
         "created_at": "2015-01-05T06:15:55.036Z",
-        "updated_at": "2015-01-05T06:15:55.036Z",
-        "birthday": null,
-        "first_added_by_user_id": 11
+        "updated_at": "2015-01-05T06:15:55.036Z"
     },
     {
+        "object_type": "contact",
         "organisation_id": 4,
         "id": 780,
         "full_name": "Alvin Lee [Onezine.com]",
-        "primary_email": "a@onezine.com",
+        "email": "a@onezine.com",
         "account_id": null,
         "created_at": "2015-01-05T06:15:55.079Z",
-        "updated_at": "2015-01-05T06:15:55.079Z",
-        "birthday": null,
-        "first_added_by_user_id": 11
+        "updated_at": "2015-01-05T06:15:55.079Z"
+
     }
   ]
 }
