@@ -344,3 +344,54 @@ Remember — a happy kitten is an authenticated kitten!
 
 
 
+
+# Interaction
+
+## Create a Comment  
+
+```json
+{
+  "auth_token" : "Bnykjzgsmza3cGMt9qBV",
+  "comment" : {
+    "comment_text" : "This is a comment on this interaction."
+  }
+}
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "status": 1,
+    "comment": {
+        "id": 30,
+        "comment_text": "This is a comment on this interaction.",
+        "interaction_id": 531,
+        "user_id": 11,
+        "created_at": "2015-01-19T15:39:38.526Z",
+        "updated_at": "2015-01-19T15:39:38.526Z"
+    }
+}
+```
+
+This endpoint creates a Comment.
+
+A Comment is text that can be posted by a user on an interaction, and it must have a Interaction reference. The Comment is posted to the particular Interaction the user is commenting on.
+
+### HTTP Request
+
+`POST http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/interactions/{:interaction_id}/comments`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+auth_token | The authentication token to identify the user
+comment | The following parameters are required - `comment_text`
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+
+
