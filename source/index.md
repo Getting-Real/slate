@@ -176,7 +176,7 @@ privacy | A hash, which has two properties - default and allowed_users. Default 
 
 
 
-# Notes (Deprecated - Disregard)
+# Notes
 
 ## Create a Note  
 
@@ -197,10 +197,7 @@ privacy | A hash, which has two properties - default and allowed_users. Default 
     "note": {
         "id": 2,
         "body": "This is a note that contains a whale.",
-        "group_id": 1,
-        "workspace_id": 1,
-        "organisation_id": 1,
-        "primary_owner_id": 1,
+        "contact_id": 773,
         "created_at": "2014-12-10T14:38:03.081Z",
         "updated_at": "2014-12-10T14:38:03.081Z"
     }
@@ -209,21 +206,20 @@ privacy | A hash, which has two properties - default and allowed_users. Default 
 
 This endpoint creates a Note.
 
-A Note is a body of text that can be posted by a user, and it must belong to a Group.
+A Note is a body of text that can be posted by a user, and it must have a Contact reference. This Contact reference refers to the Contact that the Note is about.
 
 A Note can have multiple file attachments.
 
 ### HTTP Request
 
-`POST http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/v1/groups/{:id}/notes`
+`POST http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/notes`
 
 ### Query Parameters
 
 Parameter | Description
 --------- | -----------
-{:id} | The ID of the Group to post the Note in
 auth_token | The authentication token to identify the user
-note | The following parameters are required - `body`
+note | The following parameters are required - `body` and `contact_id`
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
@@ -257,9 +253,7 @@ Remember — a happy kitten is an authenticated kitten!
         "note": {
             "id": 1,
             "body": "This is a note that contains a whale.",
-            "group_id": 1,
-            "workspace_id": 1,
-            "organisation_id": 1,
+            "contact_id": 773,
             "primary_owner_id": 1,
             "created_at": "2014-12-10T08:30:46.581Z",
             "updated_at": "2014-12-10T08:30:46.581Z"
