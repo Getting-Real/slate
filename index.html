@@ -56,79 +56,121 @@
 <p>The GET request returns JSON structured like this:</p>
 </blockquote>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">"newsfeed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"post_snippet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note that contains a whale."</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"post_owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gabriel@gettingrail.com"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-09T06:30:34.477Z"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T08:17:36.888Z"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gabriel Lim"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"designation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Whale"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"organisation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="s2">"newsfeed_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"newsfeed_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2951</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"interaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1242</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comment_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"published_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-18T09:18:49.936Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"verb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logged_meeting"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"actorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gabriel Lim"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/thumb_lopsgabriel.jpeg"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"original"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/lopsgabriel.jpeg"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"post_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"note"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"post_thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://i239.photobucket.com/albums/ff20/Master-Sayien/vader.jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"note_detail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"note_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"note_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note that contains a whale."</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"file_assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3-us-west-2.amazonaws.com/uploads/file_asset/asset/4/GadPoint-Logo_120x120.png?AWSAccessKeyId=AKIAJMUB6BJTAHZBBSEQ&amp;Signature=ep7k1EPavud76T1a7gz3GUQhsio%3D&amp;Expires=1418224130"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"file_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">13308</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3-us-west-2.amazonaws.com/uploads/file_asset/asset/5/StartuplandHowThreeGuysRisked.acsm?AWSAccessKeyId=AKIAJMUB6BJTAHZBBSEQ&amp;Signature=hR4Evw1JIg%2BeaFpAuDyRSyfC6P8%3D&amp;Expires=1418224130"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"file_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/octet-stream"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">1473</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3-us-west-2.amazonaws.com/uploads/file_asset/asset/6/larry_ellison.jpg?AWSAccessKeyId=AKIAJMUB6BJTAHZBBSEQ&amp;Signature=M4lcPwAZFbpkumXxdo9M7LRqaco%3D&amp;Expires=1418224130"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"file_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">10908</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">],</span><span class="w">
-                </span><span class="s2">"note_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T08:30:46.581Z"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"note_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T08:30:46.581Z"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T08:30:46.581Z"</span><span class="w">
+            </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/collaborators/1"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"post_snippet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note that contains a whale."</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"post_owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gabriel@gettingrail.com"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-09T06:30:34.477Z"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T08:17:36.888Z"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gabriel Lim"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"designation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Whale"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"organisation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="s2">"object"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/events/1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Talked about project"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"targets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"targetType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/180"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chen Sung, Lai"</span><span class="w">
             </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"post_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"note"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"post_thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://i239.photobucket.com/albums/ff20/Master-Sayien/vader.jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"note_detail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"note_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"note_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note that contains a whale."</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"file_assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">],</span><span class="w">
-                </span><span class="s2">"note_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T14:38:03.081Z"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"note_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T14:38:03.081Z"</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"targetType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">491</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/491"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ain Ebrahim"</span><span class="w">
             </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T14:38:03.081Z"</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"targetType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/46"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aizat Omar"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"targetType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">468</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/468"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ahmad"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"targetType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">493</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/493"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ang Ying Xin"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"privacy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"allowed_users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"newsfeed_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2949</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"interaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1241</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comment_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"published_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-18T06:21:53.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"verb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emailed"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"actorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gabriel Lim"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/thumb_lopsgabriel.jpeg"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"original"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/lopsgabriel.jpeg"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/collaborators/1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"object"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EmailMessageMetadatum"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1381</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/email_message_metadata/1381"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hi Marilyn, Could we reschedule the meeting on Thursday to 3.30 pm? Sorry about it as we have"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"targets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"targetType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">159</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/159"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marilyn Tan Mei Xuan"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"targetType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/collaborators/2"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venus Wong"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"privacy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"allowed_users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>This endpoint retrieves the Newsfeed for a particular user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/v1/newsfeed</code></p>
+<p><code class="prettyprint">GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/newsfeed</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -139,6 +181,10 @@
 <tr>
 <td>auth_token</td>
 <td>The authentication token to identify the user</td>
+</tr>
+<tr>
+<td>page</td>
+<td>The page number to retrieve (default - returns 10 newsfeed items)</td>
 </tr>
 </tbody></table>
 
@@ -153,35 +199,39 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>post_id</td>
-<td>The ID of the newsfeed post</td>
+<td>newsfeed_id</td>
+<td>The ID of the newsfeed item. Not important, as it&rsquo;s just for reference. (Newsfeed objects are just in-memory hashes for performance.)</td>
 </tr>
 <tr>
-<td>post_snippet</td>
-<td>The snippet of the post to be shown in the newsfeed</td>
+<td>interaction_id</td>
+<td>The ID of the base interaction item. <strong>Important.</strong> You will be using this to reference comments, stars, privacy and the full body of the interaction.</td>
 </tr>
 <tr>
-<td>post_owner</td>
-<td>The user who created the post</td>
+<td>comment_count</td>
+<td>The number of comments on this particular interaction</td>
 </tr>
 <tr>
-<td>post_type</td>
-<td>A newsfeed post can be a <code class="prettyprint">note</code>, <code class="prettyprint">event</code>, <code class="prettyprint">task</code>, <code class="prettyprint">goal</code> and etc..</td>
+<td>published_datatime</td>
+<td>When the interaction occurred. Use this to show the &lsquo;how long ago&rsquo;. This published_datetime automatically calculates when a task is completed, event/note was logged, and the timestamp of when emails were received.</td>
 </tr>
 <tr>
-<td>post_thumbnail</td>
-<td>A image thumbnail to use as the background of the post, if any</td>
+<td>actor</td>
+<td>The person who generated this interaction. This person can be either a contact or a user. Currently contact-generated interactions are only limited to incoming emails.</td>
 </tr>
 <tr>
-<td>{:type}_detail</td>
-<td>The post detail, e.g. note_detail, when the user taps on the post to see more detail modally</td>
+<td>object</td>
+<td>The nature of the interaction, which includes the type, and the body/snippet that you can display, which is referenced in the displayName of the object.</td>
 </tr>
 <tr>
-<td>timestamp</td>
-<td>The timestamp used to display how long ago the post was created in the newsfeed</td>
+<td>targets</td>
+<td>An array of the target of the interactions. For example, people who attended the meeting, people who are receipents of the emails, notes about a contact etc..</td>
+</tr>
+<tr>
+<td>privacy</td>
+<td>A hash, which has two properties - default and allowed_users. Default is the default privacy setting of the interaction. 0 is everyone can see. 1 is only can see the activity snippet, and 2 is private only to you. In the future, allowed_users will be computed first, then all other users who are not in allowed_users will take the default privacy settings.</td>
 </tr>
 </tbody></table>
-<h1 id='notes'>Notes</h1><h2 id='create-a-note'>Create a Note</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+<h1 id='notes-deprecated---disregard'>Notes (Deprecated - Disregard)</h1><h2 id='create-a-note'>Create a Note</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">"auth_token"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bnykjzgsmza3cGMt9qBV"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"note"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"body"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note that contains a whale."</span><span class="w">
