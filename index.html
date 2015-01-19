@@ -403,6 +403,55 @@ Remember — a happy kitten is an authenticated kitten!
 <p><aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside></p>
+<h1 id='interaction'>Interaction</h1><h2 id='create-a-comment'>Create a Comment</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"auth_token"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bnykjzgsmza3cGMt9qBV"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"comment"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"comment_text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a comment on this interaction."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comment_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a comment on this interaction."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"interaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">531</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-19T15:39:38.526Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-19T15:39:38.526Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint creates a Comment.</p>
+
+<p>A Comment is text that can be posted by a user on an interaction, and it must have a Interaction reference. The Comment is posted to the particular Interaction the user is commenting on.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/interactions/{:interaction_id}/comments</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>auth_token</td>
+<td>The authentication token to identify the user</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>The following parameters are required - <code class="prettyprint">comment_text</code></td>
+</tr>
+</tbody></table>
+
+<p><aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside></p>
 
           <h1 id='errors-under-construction'>Errors (Under Construction)</h1>
 <p><aside class="notice">This error section is stored in a separate file in <code class="prettyprint">includes/_errors.md</code>&hellip;just save them to the <code class="prettyprint">includes</code> folder and add them to the top of your <code class="prettyprint">index.md</code>&rsquo;s frontmatter. Files are included in the order listed.</aside></p>
