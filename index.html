@@ -344,6 +344,66 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The attached file in <code class="prettyprint">multipart/form-data</code> format</td>
 </tr>
 </tbody></table>
+<h1 id='contacts'>Contacts</h1><h2 id='search-for-contacts'>Search for Contacts</h2>
+<blockquote>
+<p>The GET request returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"people"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"organisation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">779</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irene Coghlan"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"primary_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"irene@theappbusiness.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-05T06:15:55.036Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-05T06:15:55.036Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_added_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"organisation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">780</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alvin Lee [Onezine.com]"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"primary_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@onezine.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-05T06:15:55.079Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-05T06:15:55.079Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_added_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint searches for Contacts with full text search.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/contacts/search</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>auth_token</td>
+<td>The authentication token to identify the user</td>
+</tr>
+<tr>
+<td>q</td>
+<td>The query string, minimum need at least 2 characters before it will trigger the full-text search</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>The scope is either &lsquo;all&rsquo;, &lsquo;contacts&rsquo; or &lsquo;users&rsquo;. Default is &lsquo;all&rsquo; if scope parameter not provided</td>
+</tr>
+</tbody></table>
+
+<p><aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside></p>
 
           <h1 id='errors-under-construction'>Errors (Under Construction)</h1>
 <p><aside class="notice">This error section is stored in a separate file in <code class="prettyprint">includes/_errors.md</code>&hellip;just save them to the <code class="prettyprint">includes</code> folder and add them to the top of your <code class="prettyprint">index.md</code>&rsquo;s frontmatter. Files are included in the order listed.</aside></p>
