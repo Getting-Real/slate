@@ -288,54 +288,67 @@ asset | The attached file in `multipart/form-data` format
 
 
 
-# Contacts
+# Search
 
-## Search for Contacts
+## Universal Search for Contacts, Users and Documents
 
 > The GET request returns JSON structured like this:
 
 ```json
 {
-  "status" : 1,
-  "people" : [
-     {
-        "object_type": "contact",
-        "organisation_id": 4,
-        "id": 779,
-        "full_name": "Irene Coghlan",
-        "email": "irene@theappbusiness.com",
-        "account_id": null,
-        "created_at": "2015-01-05T06:15:55.036Z",
-        "updated_at": "2015-01-05T06:15:55.036Z"
-    },
-    {
-        "object_type": "contact",
-        "organisation_id": 4,
-        "id": 780,
-        "full_name": "Alvin Lee [Onezine.com]",
-        "email": "a@onezine.com",
-        "account_id": null,
-        "created_at": "2015-01-05T06:15:55.079Z",
-        "updated_at": "2015-01-05T06:15:55.079Z"
-
+    "status": 1,
+    "results": {
+        "users": [
+            {
+                "id": 11,
+                "avatar": {
+                    "url": "/uploads/user/avatar/11/lopsgabriel.jpeg",
+                    "thumb": {
+                        "url": "/uploads/user/avatar/11/thumb_lopsgabriel.jpeg"
+                    },
+                    "medium": {
+                       "url": "/uploads/user/avatar/11/medium_lopsgabriel.jpeg"
+                    }
+                },
+                "email": "gab.on.rails@gmail.com",
+                "created_at": "2015-01-05T06:09:25.728Z",
+                "updated_at": "2015-01-15T08:55:35.690Z",
+                "full_name": "Crazy Gab",
+                "designation": null,
+                "organisation_id": 4,
+                "username": "crazygab"
+            }
+        ],
+        "contacts": [
+            {
+                "id": 788,
+                "full_name": "Gabriel Lim",
+                "primary_email": "gabriel@gettingrail.com",
+                "account_id": null,
+                "created_at": "2015-01-15T04:30:38.215Z",
+                "updated_at": "2015-01-15T04:30:38.215Z",
+                "organisation_id": 4,
+                "birthday": null,
+                "first_added_by_user_id": 11
+            }
+        ]
     }
-  ]
 }
 ```
 
-This endpoint searches for Contacts with full text search.
+This endpoint searches for Contacts, Users and eventually Documents with full text search.
 
 
 ### HTTP Request
 
-`GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/contacts/search`
+`GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/search`
 
 ### Query Parameters
 
 Parameter | Description
 --------- | -----------
 auth_token | The authentication token to identify the user
-q       | The query string, minimum need at least 2 characters before it will trigger the full-text search
+q       | The query string, minimum need at least 1 characters before it will trigger the full-text search
 scope   | The scope is either 'all', 'contacts' or 'users'. Default is 'all' if scope parameter not provided
 
 <aside class="success">
