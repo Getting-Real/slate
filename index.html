@@ -344,6 +344,113 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The attached file in <code class="prettyprint">multipart/form-data</code> format</td>
 </tr>
 </tbody></table>
+<h1 id='tasks'>Tasks</h1><h2 id='create-a-task'>Create a Task</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"auth_token"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bnykjzgsmza3cGMt9qBV"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"task"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"body"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a task that contains a whale."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"contact_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">779</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"due_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T14:38:03.081Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"task"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note that contains a whale."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"due_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T14:38:03.081Z"</span><span class="w">
+        </span><span class="s2">"contact_id"</span><span class="err">:</span><span class="w"> </span><span class="mi">773</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="err">nil</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"primary_owner_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T14:38:03.081Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T14:38:03.081Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint creates a Task.</p>
+
+<p>A Task is a to-do added by a user, and it must have a Contact reference. This Contact reference refers to the Contact that the Task is about.</p>
+
+<p>A Task can be assigned to other Users.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/tasks</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>auth_token</td>
+<td>The authentication token to identify the user</td>
+</tr>
+<tr>
+<td>task</td>
+<td>The following parameters are required - <code class="prettyprint">body</code> and <code class="prettyprint">contact_id</code> and the following parameters are optional -  <code class="prettyprint">due_date</code> and <code class="prettyprint">task_assignee_ids</code></td>
+</tr>
+</tbody></table>
+
+<p><aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside></p>
+<h2 id='update-a-task'>Update a Task</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"auth_token"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bnykjzgsmza3cGMt9qBV"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"task"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"completed"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"task"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a task that contains a whale."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">773</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-26T07:51:52.433Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"primary_owner_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T14:38:03.081Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-10T14:38:03.081Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint updates a Task.</p>
+
+<p>You can change the completed status of the Task here, as well as the due date and body. However, I don&rsquo;t think we want to allow people to change the contact_id of the Task for now, just delete and re-create if that&rsquo;s the case.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PUT http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/tasks/15</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>auth_token</td>
+<td>The authentication token to identify the user</td>
+</tr>
+<tr>
+<td>task</td>
+<td>The following parameters are options - <code class="prettyprint">completed</code> and <code class="prettyprint">due_date</code></td>
+</tr>
+</tbody></table>
+
+<p><aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside></p>
 <h1 id='search'>Search</h1><h2 id='universal-search-for-contacts-users-and-documents'>Universal Search for Contacts, Users and Documents</h2>
 <blockquote>
 <p>The GET request returns JSON structured like this:</p>
