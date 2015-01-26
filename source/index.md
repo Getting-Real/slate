@@ -284,6 +284,111 @@ asset | The attached file in `multipart/form-data` format
 
 
 
+# Tasks
+
+## Create a Task  
+
+```json
+{
+  "auth_token" : "Bnykjzgsmza3cGMt9qBV",
+  "task" : {
+    "body" : "This is a task that contains a whale.",
+    "contact_id" : 779,
+    "due_date" : "2014-12-10T14:38:03.081Z"
+  }
+}
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "status": 1,
+    "task": {
+        "id": 2,
+        "body": "This is a note that contains a whale.",
+        "due_date" : "2014-12-10T14:38:03.081Z"
+        "contact_id": 773,
+        "completed": false,
+        "completed_at": nil,
+        "primary_owner_id": 11,
+        "created_at": "2014-12-10T14:38:03.081Z",
+        "updated_at": "2014-12-10T14:38:03.081Z"
+    }
+}
+```
+
+This endpoint creates a Task.
+
+A Task is a to-do added by a user, and it must have a Contact reference. This Contact reference refers to the Contact that the Task is about.
+
+A Task can be assigned to other Users.
+
+### HTTP Request
+
+`POST http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/tasks`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+auth_token | The authentication token to identify the user
+task | The following parameters are required - `body` and `contact_id` and the following parameters are optional -  `due_date` and `task_assignee_ids`
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+## Update a Task  
+
+```json
+{
+  "auth_token" : "Bnykjzgsmza3cGMt9qBV",
+  "task" : {
+    "completed" : true
+  }
+}
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "status": 1,
+    "task": {
+        "id": 2,
+        "body": "This is a task that contains a whale.",
+        "contact_id": 773,
+        "completed": true,
+        "completed_at": "2015-01-26T07:51:52.433Z",
+        "primary_owner_id": 11,
+        "created_at": "2014-12-10T14:38:03.081Z",
+        "updated_at": "2014-12-10T14:38:03.081Z"
+    }
+}
+```
+
+This endpoint updates a Task.
+
+You can change the completed status of the Task here, as well as the due date and body. However, I don't think we want to allow people to change the contact_id of the Task for now, just delete and re-create if that's the case.
+
+### HTTP Request
+
+`PUT http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/tasks/15`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+auth_token | The authentication token to identify the user
+task | The following parameters are options - `completed` and `due_date`
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+
+
 
 
 
