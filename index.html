@@ -51,6 +51,450 @@
 <p>We have language bindings in Shell, Ruby, and Objective-C! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 
 <p>Let&rsquo;s get started!</p>
+<h1 id='users'>Users</h1><h2 id='get-all-users'>Get all Users</h2>
+<blockquote>
+<p>The GET request returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+</span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"venus@gettingrail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venus Wong"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"designation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"venuswong"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/2/163311_10150904439229417_1696384027_n.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/2/thumb_163311_10150904439229417_1696384027_n.jpg"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/2/medium_163311_10150904439229417_1696384027_n.jpg"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-10T14:23:29.253Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-10T14:23:29.253Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gabriel@gettingrail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gabriel Lim"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"designation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gabriel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/lopsgabriel.jpeg"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/thumb_lopsgabriel.jpeg"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/medium_lopsgabriel.jpeg"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T10:49:09.097Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T10:49:09.097Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"junxiu92@gmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jun Xiu"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"designation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"junxiu"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/3/522113_10204661884160564_4985269855251419777_n.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/3/thumb_522113_10204661884160564_4985269855251419777_n.jpg"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/3/medium_522113_10204661884160564_4985269855251419777_n.jpg"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-02T07:39:18.305Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-02T07:39:18.305Z"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all users for the organisation the requesting user is in.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/users</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>auth_token</td>
+<td>The authentication token to identify the requesting user</td>
+</tr>
+</tbody></table>
+
+<p><aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside></p>
+<h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the user.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email_address of the user. Note that this is the profile email that the user uses to sign in, and need not necessarily represent the Gmail email accounts that the user linked with their profile.</td>
+</tr>
+<tr>
+<td>full_name</td>
+<td>The user&rsquo;s full name</td>
+</tr>
+<tr>
+<td>designation</td>
+<td>The user&rsquo;s post in the company, be it CEO, Designer or Sales Executive (optional).</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username of the user. Usernames are used for @mentioning, and are unique per organisation.</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>The profile image of the user. Comes in 3 flavors, normal, thumb and medium.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-user'>Get a User</h2>
+<blockquote>
+<p>The GET request returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gabriel@gettingrail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gabriel Lim"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"designation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gabriel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/lopsgabriel.jpeg"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/thumb_lopsgabriel.jpeg"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/medium_lopsgabriel.jpeg"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T10:49:09.097Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T10:49:09.097Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves a particular User.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/users/{:id}</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>auth_token</td>
+<td>The authentication token to identify the requesting user</td>
+</tr>
+<tr>
+<td>{:id}</td>
+<td>The id parameter of the User that you want to retrieve</td>
+</tr>
+</tbody></table>
+
+<p><aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside></p>
+<h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the user.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email_address of the user. Note that this is the profile email that the user uses to sign in, and need not necessarily represent the Gmail email accounts that the user linked with their profile.</td>
+</tr>
+<tr>
+<td>full_name</td>
+<td>The user&rsquo;s full name</td>
+</tr>
+<tr>
+<td>designation</td>
+<td>The user&rsquo;s post in the company, be it CEO, Designer or Sales Executive (optional).</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username of the user. Usernames are used for @mentioning, and are unique per organisation.</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>The profile image of the user. Comes in 3 flavors, normal, thumb and medium.</td>
+</tr>
+</tbody></table>
+<h1 id='contacts'>Contacts</h1><h2 id='get-all-contacts'>Get all Contacts</h2>
+<blockquote>
+<p>The GET request returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+</span><span class="s2">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organisation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zoey Nguyen"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"primary_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zoey@methodnow.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Method"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"industry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Software"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Method is a design-centered software company. We make friendly, useful products. We started the company because we believe that technology should be used to solve problems that matter and be enjoyed by everyone. We love the web and working with new technology. Companies we have worked with include Samsung, National Youth Council, Ministry of Education, McKinsey &amp; Company, Ritual and NUS."</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-08T21:17:00.322Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-08T21:17:00.322Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"organisation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"saleswhale_company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2749069</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"designation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"first_added_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"default_avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/contact/default_avatar/9/contact-9.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-16T07:25:21.247Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-08T21:17:00.328Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organisation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ethan Le Duc Toan"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"primary_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ductoanle@gmail.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"designation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"first_added_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"default_avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/contact/default_avatar/3/contact-3.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-16T07:25:21.179Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-25T19:59:11.876Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all Contacts for the organisation the requesting user is in.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/contacts</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>auth_token</td>
+<td>The authentication token to identify the requesting user</td>
+</tr>
+</tbody></table>
+
+<p><aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside></p>
+<h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the user.</td>
+</tr>
+<tr>
+<td>organisation_id</td>
+<td>The organisation that the contact belongs to.</td>
+</tr>
+<tr>
+<td>full_name</td>
+<td>The full name of the contact.</td>
+</tr>
+<tr>
+<td>primary_email</td>
+<td>The primary email address of the contact. This is normally populated by the Gmail Contacts API but can be manually populated too. Very important because this is how we pull and match emails under this contact, and do automated matching of which account they belong to.</td>
+</tr>
+<tr>
+<td>account</td>
+<td>The account that the contact belongs to. If contact does not belong to an account, then the value is null.</td>
+</tr>
+<tr>
+<td>designation</td>
+<td>The contact&rsquo;s position, be it CEO, Designer or Sales Executive (optional).</td>
+</tr>
+<tr>
+<td>first_added_by_user_id</td>
+<td>The contact was first added into the organisation by this user.</td>
+</tr>
+<tr>
+<td>default_avatar_url</td>
+<td>The default avatar made up of the contact&rsquo;s initials and randomized flat color generated by our server. This should be used if the contact does not have a profile image (coming soon.)</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-contact'>Get a Contact</h2>
+<blockquote>
+<p>The GET request returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+</span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> 
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organisation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zoey Nguyen"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"primary_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zoey@methodnow.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Method"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"industry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Software"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Method is a design-centered software company. We make friendly, useful products. We started the company because we believe that technology should be used to solve problems that matter and be enjoyed by everyone. We love the web and working with new technology. Companies we have worked with include Samsung, National Youth Council, Ministry of Education, McKinsey &amp; Company, Ritual and NUS."</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-08T21:17:00.322Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-08T21:17:00.322Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"organisation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"saleswhale_company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2749069</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"designation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"first_added_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"default_avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/contact/default_avatar/9/contact-9.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-16T07:25:21.247Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-08T21:17:00.328Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"newsfeed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5191</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"interaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"comment_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w">
+                    </span><span class="s2">"published_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T13:35:09.646Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"verb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"posted_note"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"actorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gabriel Lim"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/thumb_lopsgabriel.jpeg"</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="s2">"original"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/lopsgabriel.jpeg"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/collaborators/1"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"object"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Note"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">113</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/notes/113"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note with 1 attachment"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"targets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"targetType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"schema_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/1"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nadine Keller"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="s2">"privacy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"allowed_users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves an individual Contact. The contact&rsquo;s related interactions are included here as well, which is omitted inside the Get all Contacts endpoint.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/contact/{:id}</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>auth_token</td>
+<td>The authentication token to identify the requesting user</td>
+</tr>
+<tr>
+<td>{:id}</td>
+<td>The id parameter of the User that you want to retrieve</td>
+</tr>
+</tbody></table>
+
+<p><aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside></p>
+<h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the user.</td>
+</tr>
+<tr>
+<td>organisation_id</td>
+<td>The organisation that the contact belongs to.</td>
+</tr>
+<tr>
+<td>full_name</td>
+<td>The full name of the contact.</td>
+</tr>
+<tr>
+<td>primary_email</td>
+<td>The primary email address of the contact. This is normally populated by the Gmail Contacts API but can be manually populated too. Very important because this is how we pull and match emails under this contact, and do automated matching of which account they belong to.</td>
+</tr>
+<tr>
+<td>account</td>
+<td>The account that the contact belongs to. If contact does not belong to an account, then the value is null.</td>
+</tr>
+<tr>
+<td>designation</td>
+<td>The contact&rsquo;s position, be it CEO, Designer or Sales Executive (optional).</td>
+</tr>
+<tr>
+<td>first_added_by_user_id</td>
+<td>The contact was first added into the organisation by this user.</td>
+</tr>
+<tr>
+<td>default_avatar_url</td>
+<td>The default avatar made up of the contact&rsquo;s initials and randomized flat color generated by our server. This should be used if the contact does not have a profile image (coming soon.)</td>
+</tr>
+<tr>
+<td>newsfeed</td>
+<td>The related interactions for this particular contact. Refer to Newsfeed documentation for more information on the sub-properties.</td>
+</tr>
+</tbody></table>
 <h1 id='newsfeed'>Newsfeed</h1><h2 id='get-the-newsfeed'>Get the Newsfeed</h2>
 <blockquote>
 <p>The GET request returns JSON structured like this:</p>
