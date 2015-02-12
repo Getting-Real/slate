@@ -23,6 +23,383 @@ We have language bindings in Shell, Ruby, and Objective-C! You can view code exa
 
 Let's get started!
 
+# Users
+
+## Get all Users
+
+> The GET request returns JSON structured like this:
+
+```json
+{
+"users": [
+    {
+        "id": 2,
+        "email": "venus@gettingrail.com",
+        "full_name": "Venus Wong",
+        "designation": null,
+        "username": "venuswong",
+        "avatar": {
+            "avatar": {
+                "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/2/163311_10150904439229417_1696384027_n.jpg",
+                "thumb": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/2/thumb_163311_10150904439229417_1696384027_n.jpg"
+                },
+                "medium": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/2/medium_163311_10150904439229417_1696384027_n.jpg"
+                }
+            }
+        },
+        "created_at": "2015-02-10T14:23:29.253Z",
+        "updated_at": "2015-02-10T14:23:29.253Z"
+    },
+    {
+        "id": 1,
+        "email": "gabriel@gettingrail.com",
+        "full_name": "Gabriel Lim",
+        "designation": null,
+        "username": "gabriel",
+        "avatar": {
+            "avatar": {
+                "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/lopsgabriel.jpeg",
+                "thumb": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/thumb_lopsgabriel.jpeg"
+                },
+                "medium": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/medium_lopsgabriel.jpeg"
+                }
+            }
+        },
+        "created_at": "2015-02-12T10:49:09.097Z",
+        "updated_at": "2015-02-12T10:49:09.097Z"
+        },
+    {
+        "id": 3,
+        "email": "junxiu92@gmail.com",
+        "full_name": "Jun Xiu",
+        "designation": null,
+        "username": "junxiu",
+        "avatar": {
+            "avatar": {
+                "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/3/522113_10204661884160564_4985269855251419777_n.jpg",
+                "thumb": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/3/thumb_522113_10204661884160564_4985269855251419777_n.jpg"
+                },
+                "medium": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/3/medium_522113_10204661884160564_4985269855251419777_n.jpg"
+                }
+            }
+        },
+        "created_at": "2015-02-02T07:39:18.305Z",
+        "updated_at": "2015-02-02T07:39:18.305Z"
+    }]
+}
+```
+
+This endpoint retrieves all users for the organisation the requesting user is in.
+
+### HTTP Request
+
+`GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/users`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+auth_token | The authentication token to identify the requesting user
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+### Response
+
+Attribute | Description
+--------- | -----------
+id | The ID of the user.
+email | The email_address of the user. Note that this is the profile email that the user uses to sign in, and need not necessarily represent the Gmail email accounts that the user linked with their profile.
+full_name | The user's full name
+designation | The user's post in the company, be it CEO, Designer or Sales Executive (optional).
+username | The username of the user. Usernames are used for @mentioning, and are unique per organisation.
+avatar | The profile image of the user. Comes in 3 flavors, normal, thumb and medium.
+
+
+
+## Get a User
+
+> The GET request returns JSON structured like this:
+
+```json
+{
+"user": {
+        "id": 1,
+        "email": "gabriel@gettingrail.com",
+        "full_name": "Gabriel Lim",
+        "designation": null,
+        "username": "gabriel",
+        "avatar": {
+            "avatar": {
+                "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/lopsgabriel.jpeg",
+                "thumb": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/thumb_lopsgabriel.jpeg"
+                },
+                "medium": {
+                    "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/medium_lopsgabriel.jpeg"
+                }
+            }
+        },
+        "created_at": "2015-02-12T10:49:09.097Z",
+        "updated_at": "2015-02-12T10:49:09.097Z"
+    }
+}
+```
+
+This endpoint retrieves a particular User.
+
+### HTTP Request
+
+`GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/users/{:id}`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+auth_token | The authentication token to identify the requesting user
+{:id}   | The id parameter of the User that you want to retrieve
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+### Response
+
+Attribute | Description
+--------- | -----------
+id | The ID of the user.
+email | The email_address of the user. Note that this is the profile email that the user uses to sign in, and need not necessarily represent the Gmail email accounts that the user linked with their profile.
+full_name | The user's full name
+designation | The user's post in the company, be it CEO, Designer or Sales Executive (optional).
+username | The username of the user. Usernames are used for @mentioning, and are unique per organisation.
+avatar | The profile image of the user. Comes in 3 flavors, normal, thumb and medium.
+
+
+
+
+
+
+
+
+
+
+
+# Contacts
+
+## Get all Contacts
+
+> The GET request returns JSON structured like this:
+
+```json
+{
+"contacts": [
+        {
+            "id": 9,
+            "organisation_id": 1,
+            "full_name": "Zoey Nguyen",
+            "primary_email": "zoey@methodnow.com",
+            "account": {
+                "id": 2,
+                "company_name": "Method",
+                "industry": "Software",
+                "description": "Method is a design-centered software company. We make friendly, useful products. We started the company because we believe that technology should be used to solve problems that matter and be enjoyed by everyone. We love the web and working with new technology. Companies we have worked with include Samsung, National Youth Council, Ministry of Education, McKinsey & Company, Ritual and NUS.",
+                "created_at": "2015-02-08T21:17:00.322Z",
+                "updated_at": "2015-02-08T21:17:00.322Z",
+                "organisation_id": 1,
+                "saleswhale_company_id": 2749069
+            },
+            "designation": null,
+            "first_added_by_user_id": 1,
+            "default_avatar_url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/contact/default_avatar/9/contact-9.png",
+            "created_at": "2015-01-16T07:25:21.247Z",
+            "updated_at": "2015-02-08T21:17:00.328Z"
+            },
+        {
+            "id": 3,
+            "organisation_id": 1,
+            "full_name": "Ethan Le Duc Toan",
+            "primary_email": "ductoanle@gmail.com",
+            "account": null,
+            "designation": null,
+            "first_added_by_user_id": 1,
+            "default_avatar_url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/contact/default_avatar/3/contact-3.png",
+            "created_at": "2015-01-16T07:25:21.179Z",
+            "updated_at": "2015-01-25T19:59:11.876Z"
+        }
+   ]
+}
+```
+
+This endpoint retrieves all Contacts for the organisation the requesting user is in.
+
+### HTTP Request
+
+`GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/contacts`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+auth_token | The authentication token to identify the requesting user
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+### Response
+
+Attribute | Description
+--------- | -----------
+id | The ID of the user.
+organisation_id | The organisation that the contact belongs to.
+full_name | The full name of the contact.
+primary_email | The primary email address of the contact. This is normally populated by the Gmail Contacts API but can be manually populated too. Very important because this is how we pull and match emails under this contact, and do automated matching of which account they belong to.
+account | The account that the contact belongs to. If contact does not belong to an account, then the value is null.
+designation | The contact's position, be it CEO, Designer or Sales Executive (optional).
+first_added_by_user_id | The contact was first added into the organisation by this user.
+default_avatar_url | The default avatar made up of the contact's initials and randomized flat color generated by our server. This should be used if the contact does not have a profile image (coming soon.)
+
+
+
+## Get a Contact
+
+> The GET request returns JSON structured like this:
+
+```json
+{
+"contact": 
+        {
+            "id": 9,
+            "organisation_id": 1,
+            "full_name": "Zoey Nguyen",
+            "primary_email": "zoey@methodnow.com",
+            "account": {
+                "id": 2,
+                "company_name": "Method",
+                "industry": "Software",
+                "description": "Method is a design-centered software company. We make friendly, useful products. We started the company because we believe that technology should be used to solve problems that matter and be enjoyed by everyone. We love the web and working with new technology. Companies we have worked with include Samsung, National Youth Council, Ministry of Education, McKinsey & Company, Ritual and NUS.",
+                "created_at": "2015-02-08T21:17:00.322Z",
+                "updated_at": "2015-02-08T21:17:00.322Z",
+                "organisation_id": 1,
+                "saleswhale_company_id": 2749069
+            },
+            "designation": null,
+            "first_added_by_user_id": 1,
+            "default_avatar_url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/contact/default_avatar/9/contact-9.png",
+            "created_at": "2015-01-16T07:25:21.247Z",
+            "updated_at": "2015-02-08T21:17:00.328Z",
+            "newsfeed": [
+                {
+                    "id": 5191,
+                    "interaction_id": 1521,
+                    "comment_count": 0,
+                    "comments": [ ],
+                    "published_datetime": "2015-02-12T13:35:09.646Z",
+                    "verb": "posted_note",
+                    "actor": {
+                        "actorType": "user",
+                        "id": 1,
+                        "displayName": "Gabriel Lim",
+                        "image": {
+                            "thumbnail": {
+                                "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/thumb_lopsgabriel.jpeg"
+                            },
+                            "original": {
+                                "url": "https://saleswhale-reboot-production.s3.amazonaws.com/uploads/user/avatar/1/lopsgabriel.jpeg"
+                            }
+                    },
+                    "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/collaborators/1"
+                    },
+                    "object": {
+                        "objectType": "Note",
+                        "id": 113,
+                        "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/notes/113",
+                        "displayName": "This is a note with 1 attachment"
+                    },
+                    "targets": [
+                        {
+                            "targetType": "contact",
+                            "id": 1,
+                            "schema_url": "http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/contacts/1",
+                            "displayName": "Nadine Keller"
+                        }
+                    ],
+                    "privacy": {
+                        "default": 0,
+                        "allowed_users": [ ]
+                    }
+                }
+            ]
+        }
+}
+```
+
+This endpoint retrieves an individual Contact. The contact's related interactions are included here as well, which is omitted inside the Get all Contacts endpoint.
+
+### HTTP Request
+
+`GET http://saleswhale-v2-env-tcqj2t2dst.elasticbeanstalk.com/api/v1/contact/{:id}`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+auth_token | The authentication token to identify the requesting user
+{:id}   | The id parameter of the User that you want to retrieve
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+### Response
+
+Attribute | Description
+--------- | -----------
+id | The ID of the user.
+organisation_id | The organisation that the contact belongs to.
+full_name | The full name of the contact.
+primary_email | The primary email address of the contact. This is normally populated by the Gmail Contacts API but can be manually populated too. Very important because this is how we pull and match emails under this contact, and do automated matching of which account they belong to.
+account | The account that the contact belongs to. If contact does not belong to an account, then the value is null.
+designation | The contact's position, be it CEO, Designer or Sales Executive (optional).
+first_added_by_user_id | The contact was first added into the organisation by this user.
+default_avatar_url | The default avatar made up of the contact's initials and randomized flat color generated by our server. This should be used if the contact does not have a profile image (coming soon.)
+newsfeed | The related interactions for this particular contact. Refer to Newsfeed documentation for more information on the sub-properties.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Newsfeed
 
